@@ -1,0 +1,24 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "The best way to watch videos.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinhyeok0204/clone-Youtube.git"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Jeon Jin Hyeok<aqwstn@naver.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jinhyeok0204/clone-Youtube/issues"
+  },
+  "homepage": "https://github.com/jinhyeok0204/clone-Youtube#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5"
+  }
+}
