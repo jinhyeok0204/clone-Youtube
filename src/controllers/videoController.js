@@ -1,6 +1,32 @@
 // for globalRouter
 export const recommend = (req, res) => {
-    res.render("home", { pageTitle: "Home" });
+    const videos = [
+        {
+            title: "First Video",
+            rating: 5,
+            comments: 2,
+            createdAt: "2",
+            views: 59,
+            id: 1,
+        },
+        {
+            title: "Second Video",
+            rating: 5,
+            comments: 2,
+            createdAt: "2",
+            views: 59,
+            id: 1,
+        },
+        {
+            title: "Third Video",
+            rating: 5,
+            comments: 2,
+            createdAt: "2",
+            views: 59,
+            id: 1,
+        },
+    ];
+    return res.render("home", { pageTitle: "Home", videos });
 };
 export const search = (req, res) => {
     res.send("Search Videos");
