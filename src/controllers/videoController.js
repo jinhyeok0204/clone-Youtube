@@ -1,42 +1,50 @@
 // for globalRouter
+let videos = [
+    {
+        title: "First Video",
+        rating: 5,
+        comments: 2,
+        createdAt: "2",
+        views: 59,
+        id: 1,
+    },
+    {
+        title: "Second Video",
+        rating: 5,
+        comments: 2,
+        createdAt: "2",
+        views: 59,
+        id: 2,
+    },
+    {
+        title: "Third Video",
+        rating: 5,
+        comments: 2,
+        createdAt: "2",
+        views: 59,
+        id: 3,
+    },
+];
+
 export const recommend = (req, res) => {
-    const videos = [
-        {
-            title: "First Video",
-            rating: 5,
-            comments: 2,
-            createdAt: "2",
-            views: 59,
-            id: 1,
-        },
-        {
-            title: "Second Video",
-            rating: 5,
-            comments: 2,
-            createdAt: "2",
-            views: 59,
-            id: 1,
-        },
-        {
-            title: "Third Video",
-            rating: 5,
-            comments: 2,
-            createdAt: "2",
-            views: 59,
-            id: 1,
-        },
-    ];
     return res.render("home", { pageTitle: "Home", videos });
 };
 export const search = (req, res) => {
     res.send("Search Videos");
 };
 // for videoRouter
-export const seeVideo = (req, res) => {
-    res.render("seevideo", { pageTitle: "seeVideo" });
+export const watchVideo = (req, res) => {
+    const { id } = req.params;
+    const video = videos[id - 1];
+    res.render("watchvideo", { pageTitle: `Watching ${video.title}`, video });
 };
-export const editVideo = (req, res) => {
-    res.render("editvideo", { pageTitle: "editVideo" });
+export const getEdit = (req, res) => {
+    const { id } = req.params;
+    const video = videos[id - 1];
+    res.render("editvideo", { pageTitle: `Editing ${video.title}`, video });
 };
-export const uploadVideo = (req, res) => res.send("Upload Video");
-export const deleteVideo = (req, res) => res.send("Delete Video");
+
+export const postEdit = (req, res) => {
+    const { id } = req.params;
+    return res.redirect(`/videos/${id}`);
+};
