@@ -4,7 +4,6 @@ import {
     watchVideo,
     getEdit,
     postEdit,
-    deleteVideo,
 } from "../controllers/videoController";
 
 const videoRouter = express.Router();

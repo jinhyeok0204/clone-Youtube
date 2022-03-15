@@ -29,9 +29,7 @@ let videos = [
 export const recommend = (req, res) => {
     return res.render("home", { pageTitle: "Home", videos });
 };
-export const search = (req, res) => {
-    res.send("Search Videos");
-};
+
 // for videoRouter
 export const watchVideo = (req, res) => {
     const { id } = req.params;
@@ -46,5 +44,7 @@ export const getEdit = (req, res) => {
 
 export const postEdit = (req, res) => {
     const { id } = req.params;
+    const { title } = req.body;
+    videos[id - 1].title = title;
     return res.redirect(`/videos/${id}`);
 };
