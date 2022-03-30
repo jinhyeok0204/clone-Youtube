@@ -2,7 +2,6 @@ extends base
 include mixins/videoStruct
 
 block content 
-    h2 Welcome here you will see the trending videos 
     each video in videos
         +videoStruct(video)
     else 
