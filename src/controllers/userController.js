@@ -1,5 +1,9 @@
 // for globalRouter
-export const join = (req, res) => res.send("Join Youtube");
+export const getJoin = (req, res) => res.render("join", { pageTitle: "Join" });
+export const postJoin = (req, res) => {
+	console.log(req.body);
+	res.end();
+};
 export const login = (req, res) => res.send("Login Page");
 // for userRouter
 export const seeProfile = (req, res) => res.send("Profile");
