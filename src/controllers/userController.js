@@ -8,7 +8,7 @@ export const postJoin = async (req, res) => {
 		req.body;
 
 	if (password !== confirmPassword) {
-		return res.render("join", {
+		return res.status(400).render("join", {
 			pageTitle: "Join",
 			name,
 			username,
@@ -20,7 +20,7 @@ export const postJoin = async (req, res) => {
 	const exists = await User.exists({ $or: [{ username }, { email }] });
 
 	if (exists) {
-		return res.render("join", {
+		return res.status(400).render("join", {
 			pageTitle: "Join",
 			name,
 			location,
