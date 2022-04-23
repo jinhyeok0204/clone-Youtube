@@ -1,13 +1,16 @@
 extends base
 
 block content 
-    h4=errorMessage 
     form(method="POST")
         input(placeholder= "Name", name="name", type="text", required, trim="true", value=name)
         input(placeholder= "Email", name="email", type="text", required, trim="true", value=email)
         input(placeholder= "Username", name="username", type="text", required, trim="true", value=username)
-        input(placeholder= "Password", name="password", type="password", required, trim="true")
-        input(placeholder= "Confirm Password", name="confirmPassword", type="password", required, trim="true")
+        input(placeholder= "Password", name="password", type="password", required, trim="true", value=password)
+        input(placeholder= "Confirm Password", name="confirmPassword", type="password", required, trim="true", value=confirmPassword)
         input(placeholder= "Location", name="location", type="text", required, trim="true", value=location)
         input(type="submit", value="Join")
-        
+    
+    hr
+    div 
+        span Already have an account? 
+            a(href="/login") Log in
